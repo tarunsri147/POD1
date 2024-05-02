@@ -1,0 +1,6 @@
+create or replace table DEV_NPT.NPT_DWH.V_PBI_POD1_SS_EACH_STATUS as
+select mapping.mat_cod ||'_'|| mapping.planning_plt_cod as key1, mapping.mat_cod, mapping.plt_cod
+from V_PBI_DANONE_MAT_PL_DC_MAPPING mapping
+union
+select mapping1.mat_cod ||'_'|| mapping1.planning_plt_cod as key1, mapping1.mat_cod, mapping1.planning_plt_cod
+from V_PBI_DANONE_MAT_PL_DC_MAPPING mapping1
